@@ -1,0 +1,105 @@
+CREATE TABLE `departments` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+);
+
+CREATE TABLE `designpatterns`.`members` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `phoneNumber` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE `designpatterns`.`projects` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `departmentID` INT NOT NULL,
+  `managerID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  CONSTRAINT `departmentID`
+    FOREIGN KEY (`ID`)
+    REFERENCES `designpatterns`.`departments` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `managerID`
+    FOREIGN KEY (`ID`)
+    REFERENCES `designpatterns`.`members` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `designpatterns`.`tasks` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `fromDate` DATE NOT NULL,
+  `toDate` DATE NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `projectID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  CONSTRAINT `projectID`
+    FOREIGN KEY (`ID`)
+    REFERENCES `designpatterns`.`projects` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `designpatterns`.`resources` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `taskID` INT NOT NULL,
+  PRIMARY KEY (`ID`),
+  CONSTRAINT `taskID`
+    FOREIGN KEY (`ID`)
+    REFERENCES `designpatterns`.`tasks` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `designpatterns`.`membertasks` (
+  `memberID` INT NOT NULL,
+  `taskID` INT NOT NULL,
+  PRIMARY KEY (`memberID`, `taskID`),
+  INDEX `taskID_idx` (`taskID` ASC) VISIBLE,
+  CONSTRAINT `memberID2`
+    FOREIGN KEY (`memberID`)
+    REFERENCES `designpatterns`.`members` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `taskID2`
+    FOREIGN KEY (`taskID`)
+    REFERENCES `designpatterns`.`tasks` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+CREATE TABLE `designpatterns`.`taskresources` (
+  `taskID` INT NOT NULL,
+  `resourceID` INT NOT NULL,
+  PRIMARY KEY (`taskID`, `resourceID`),
+  INDEX `resourceID3_idx` (`resourceID` ASC) VISIBLE,
+  CONSTRAINT `taskID3`
+    FOREIGN KEY (`taskID`)
+    REFERENCES `designpatterns`.`tasks` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `resourceID3`
+    FOREIGN KEY (`resourceID`)
+    REFERENCES `designpatterns`.`resources` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `designpatterns`.`memberprojects` (
+  `memberID` INT NOT NULL,
+  `projectID` INT NOT NULL,
+  PRIMARY KEY (`memberID`, `projectID`),
+  INDEX `projectID4_idx` (`projectID` ASC) VISIBLE,
+  CONSTRAINT `memberID4`
+    FOREIGN KEY (`memberID`)
+    REFERENCES `designpatterns`.`members` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `projectID4`
+    FOREIGN KEY (`projectID`)
+    REFERENCES `designpatterns`.`projects` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
