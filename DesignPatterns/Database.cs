@@ -19,12 +19,17 @@ namespace DesignPatterns
 
         public static bool insertdepartment(Department newDepartment)
         {
-            return CRUDQuery("INSERT INTO departments (`Name`) VALUES ('" + newDepartment.name + "');");
+            return CRUDQuery($"INSERT INTO departments (`Name`) VALUES ('{newDepartment.name}');");
         }
 
+        public static bool insertMember(Member newMember)
+        {
+            return CRUDQuery($"INSERT INTO `members` (`name`, `email`, `password`, `phoneNumber`, `address`)" +
+                $" VALUES ('{newMember.name}', '{newMember.email}', '{newMember.password}', '{newMember.phoneNumber}', '{newMember.addrees}');");
+        }
 
         // used for insert, update, delete
-        private static bool CRUDQuery(string query)
+        public static bool CRUDQuery(string query)
         {
 
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -36,7 +41,7 @@ namespace DesignPatterns
                 databaseConnection.Open();
                 MySqlDataReader myReader = commandDatabase.ExecuteReader();
 
-                MessageBox.Show("User succesfully registered");
+                MessageBox.Show("Succesfully excuted");
 
                 databaseConnection.Close();
 
@@ -51,7 +56,7 @@ namespace DesignPatterns
         }
 
         // for select queries
-        public static List<List<string>> SelectQuery(string query)
+        public static List<Dictionary<string, string>> SelectQuery(string query)
         {
             // Prepare the connection
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
@@ -59,7 +64,7 @@ namespace DesignPatterns
             commandDatabase.CommandTimeout = 60;
             MySqlDataReader reader;
 
-            List<List<string>> result = null;
+            List<Dictionary<string, string>> result = null;
 
             // Let's do it !
             try
@@ -77,16 +82,15 @@ namespace DesignPatterns
 
                 if (reader.HasRows)
                 {
-                    result = new List<List<string>>();
+                    result = new List<Dictionary<string, string>>();
                     while (reader.Read())
                     {
                         // As our database, the array will contain : ID 0, FIRST_NAME 1,LAST_NAME 2, ADDRESS 3
                         // Do something with every received database ROW
-                        List<string> row = new List<string>(reader.FieldCount);
-
+                        Dictionary<string, string> row = new Dictionary<string, string>();
                         for (int i = 0; i < reader.FieldCount; i++)
                         {
-                            row.Add(reader.GetString(i));
+                            row.Add(reader.GetName(i),reader.GetString(i));
                         }
 
                         result.Add(row);

@@ -18,32 +18,31 @@ namespace DesignPatterns
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void register(object sender, EventArgs e)
         {
-            // Your query,
-            string query = "SELECT * FROM departments";
+            Member newMember = new Member();
+            newMember.name = name.Text;
+            newMember.email = email.Text;
+            newMember.password = password.Text;
+            newMember.phoneNumber = phone.Text;
+            newMember.addrees = address.Text;
 
-            List<List<string>> result = Database.SelectQuery(query);
-
-            if (result == null)
-            {
-                return;
-            }
-            foreach (List<String> row in result)
-            {
-                string output = "";
-                foreach (string field in row)
-                {
-                    output += field + " ";
-                }
-
-                MessageBox.Show(output);
-            }
+            Database.insertMember(newMember);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void login(object sender, EventArgs e)
         {
-            Database.insertdepartment(new Department("Ahmed"));
+            List<Dictionary<string, string>> result = Database.SelectQuery($"SELECT * FROM members where email = '{loginEmail.Text}';");
+
+            if (result == null || result[0]["password"] != loginPassword.Text)
+            {
+                MessageBox.Show("Invaild username or password");
+            }
+            else
+            {
+                MessageBox.Show("Success");
+            }
         }
     }
 }
