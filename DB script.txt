@@ -42,21 +42,22 @@ CREATE TABLE `designpatterns`.`tasks` (
   `projectID` INT NOT NULL,
   PRIMARY KEY (`ID`),
   CONSTRAINT `projectID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`projectID`)
     REFERENCES `designpatterns`.`projects` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE TABLE `designpatterns`.`resources` (
+CREATE TABLE `designpatterns`.`resources` (/*removed the taskID no Null status and removed error*/
   `ID` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `taskID` INT NOT NULL,
+`taskID` INT,
   PRIMARY KEY (`ID`),
   CONSTRAINT `taskID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`taskID`)
     REFERENCES `designpatterns`.`tasks` (`ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION
+);
 
 CREATE TABLE `designpatterns`.`membertasks` (
   `memberID` INT NOT NULL,
@@ -74,7 +75,7 @@ CREATE TABLE `designpatterns`.`membertasks` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-
+/* this is pointless
 CREATE TABLE `designpatterns`.`taskresources` (
   `taskID` INT NOT NULL,
   `resourceID` INT NOT NULL,
@@ -90,7 +91,7 @@ CREATE TABLE `designpatterns`.`taskresources` (
     REFERENCES `designpatterns`.`resources` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
+*/
 CREATE TABLE `designpatterns`.`memberprojects` (
   `memberID` INT NOT NULL,
   `projectID` INT NOT NULL,
@@ -107,3 +108,19 @@ CREATE TABLE `designpatterns`.`memberprojects` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+Create table `designpatterns`.`departmentmember` (/*is this correct?*/
+`departmentID` int not null,
+`memberID` int not null,
+primary key(`departmentID`, `memberID`),
+index `departmentID_idx` (`departmentID` asc) visible,
+constraint `departmentID2`
+foreign key(`departmentID`)
+references `designpatterns`.`departments`(`ID`)
+on delete no action
+on update no action,
+constraint `memberID5departmentmemberdepartmentmember`
+foreign key (`memberID`)
+references `designpatterns`.`members`(`ID`)
+on delete no action
+on update no action
+);

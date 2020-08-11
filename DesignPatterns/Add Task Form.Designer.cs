@@ -39,12 +39,13 @@
             this.FromDatePicker = new System.Windows.Forms.DateTimePicker();
             this.ToDatePicker = new System.Windows.Forms.DateTimePicker();
             this.AddTaskBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DescriptionLbl
             // 
             this.DescriptionLbl.AutoSize = true;
-            this.DescriptionLbl.Location = new System.Drawing.Point(104, 110);
+            this.DescriptionLbl.Location = new System.Drawing.Point(42, 110);
             this.DescriptionLbl.Name = "DescriptionLbl";
             this.DescriptionLbl.Size = new System.Drawing.Size(79, 17);
             this.DescriptionLbl.TabIndex = 0;
@@ -53,7 +54,7 @@
             // StatusLbl
             // 
             this.StatusLbl.AutoSize = true;
-            this.StatusLbl.Location = new System.Drawing.Point(554, 253);
+            this.StatusLbl.Location = new System.Drawing.Point(478, 253);
             this.StatusLbl.Name = "StatusLbl";
             this.StatusLbl.Size = new System.Drawing.Size(48, 17);
             this.StatusLbl.TabIndex = 1;
@@ -62,7 +63,7 @@
             // ProjectIDLbl
             // 
             this.ProjectIDLbl.AutoSize = true;
-            this.ProjectIDLbl.Location = new System.Drawing.Point(157, 253);
+            this.ProjectIDLbl.Location = new System.Drawing.Point(91, 253);
             this.ProjectIDLbl.Name = "ProjectIDLbl";
             this.ProjectIDLbl.Size = new System.Drawing.Size(69, 17);
             this.ProjectIDLbl.TabIndex = 2;
@@ -71,7 +72,7 @@
             // ToDateLbl
             // 
             this.ToDateLbl.AutoSize = true;
-            this.ToDateLbl.Location = new System.Drawing.Point(647, 110);
+            this.ToDateLbl.Location = new System.Drawing.Point(554, 110);
             this.ToDateLbl.Name = "ToDateLbl";
             this.ToDateLbl.Size = new System.Drawing.Size(25, 17);
             this.ToDateLbl.TabIndex = 3;
@@ -80,7 +81,7 @@
             // FromDateLbl
             // 
             this.FromDateLbl.AutoSize = true;
-            this.FromDateLbl.Location = new System.Drawing.Point(383, 110);
+            this.FromDateLbl.Location = new System.Drawing.Point(295, 110);
             this.FromDateLbl.Name = "FromDateLbl";
             this.FromDateLbl.Size = new System.Drawing.Size(40, 17);
             this.FromDateLbl.TabIndex = 4;
@@ -133,11 +134,22 @@
             this.AddTaskBtn.UseVisualStyleBackColor = true;
             this.AddTaskBtn.Click += new System.EventHandler(this.AddTaskBtn_Click);
             // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(437, 390);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(143, 37);
+            this.CancelBtn.TabIndex = 11;
+            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
+            // 
             // AddTaskForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.AddTaskBtn);
             this.Controls.Add(this.ToDatePicker);
             this.Controls.Add(this.FromDatePicker);
@@ -170,5 +182,6 @@
         private System.Windows.Forms.DateTimePicker FromDatePicker;
         private System.Windows.Forms.DateTimePicker ToDatePicker;
         private System.Windows.Forms.Button AddTaskBtn;
+        private System.Windows.Forms.Button CancelBtn;
     }
 }

@@ -14,7 +14,7 @@ namespace DesignPatterns
         static string connectionString;
         static Database()
         {
-            connectionString = "datasource=127.0.0.1;port=3306;username=Ahmed;password=1234;database=designpatterns;";
+            connectionString = "datasource=127.0.0.1;port=3306;username=root;password=OODP;database=designpatterns;"; //change username and password for your database
         }
 
         public static bool insertdepartment(Department newDepartment)
@@ -30,8 +30,45 @@ namespace DesignPatterns
 
         public static bool insertTask(Task newTask)
         {
-            return CRUDQuery($"INSERT INTO `projects` (`title`, `fromDate`, `toDate`, `status`, `projectID`)" +
-                $" VALUES ('{newTask.title}', '{newTask.fromDate}', '{newTask.toDate}', '{newTask.status}', '{newTask.ProjectID}')");
+            return CRUDQuery($"INSERT INTO `tasks` (`title`, `fromDate`, `toDate`, `status`, `projectID`)" +
+                $" VALUES ('{newTask.title}', '{String.Join("-", newTask.fromDate.Split(' ')[0].Split('/').Reverse())}', '{String.Join("-",newTask.toDate.Split(' ')[0].Split('/').Reverse())}', '{newTask.status}', '{newTask.ProjectID}')");
+        }
+
+        public static bool insertTaskMember(string taskID, string memberID)
+        {
+            return CRUDQuery($"INSERT INTO `membertasks` (`memberID`, `taskID`)" + $" VALUES ('{memberID}', '{taskID}')");
+        }
+
+        public static bool removeTaskMember(string taskID, string memberID)
+        {
+            return CRUDQuery($"DELETE FROM `membertasks` WHERE memberID = '{memberID}' AND taskID = '{taskID}'");
+        }
+
+        public static bool updateTaskStatus(string taskID, string status)
+        {
+            return CRUDQuery($"UPDATE `tasks` SET status = '{status}' WHERE ID = '{taskID}' ");
+        }
+
+        public static bool addResource(string resourceName)
+        {
+            return CRUDQuery($"INSERT INTO `resources` (`name`) VALUES ('{resourceName}')");
+        }
+
+        public static bool addResource(string resourceName, string taskID)
+        {
+            return CRUDQuery($"INSERT INTO `resources` (`name`, `taskID`) VALUES ('{resourceName}', '{taskID}')");
+        }
+
+        public static bool removeResource(string resourceID)
+        {
+            return CRUDQuery($"DELETE FROM `resources` WHERE ID = '{resourceID}'");
+        }
+
+        public static bool removeTask(string taskID)
+        {
+            return CRUDQuery($"UPDATE `resources` SET taskID = null WHERE taskID = '{taskID}' ") &&
+                CRUDQuery($"DELETE FROM `membertasks` WHERE taskID = '{taskID}'") &&
+                CRUDQuery($"DELETE FROM `tasks` WHERE ID = '{taskID}'");
         }
 
         // used for insert, update, delete

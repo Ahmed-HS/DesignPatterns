@@ -55,6 +55,42 @@
     <Compile Include="Add Task Form.Designer.cs">
       <DependentUpon>Add Task Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add Task Members.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Task Members.Designer.cs">
+      <DependentUpon>Add Task Members.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Resource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Resource.Designer.cs">
+      <DependentUpon>Add Resource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remove Task Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remove Task Form.Designer.cs">
+      <DependentUpon>Remove Task Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remove Resource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remove Resource.Designer.cs">
+      <DependentUpon>Remove Resource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update Task Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update Task Status.Designer.cs">
+      <DependentUpon>Update Task Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remove Task Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remove Task Member.Designer.cs">
+      <DependentUpon>Remove Task Member.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Add Resource.resx">
+      <DependentUpon>Add Resource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Task Members.resx">
+      <DependentUpon>Add Task Members.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Add Task Form.resx">
       <DependentUpon>Add Task Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +120,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Remove Resource.resx">
+      <DependentUpon>Remove Resource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remove Task Form.resx">
+      <DependentUpon>Remove Task Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remove Task Member.resx">
+      <DependentUpon>Remove Task Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update Task Status.resx">
+      <DependentUpon>Update Task Status.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

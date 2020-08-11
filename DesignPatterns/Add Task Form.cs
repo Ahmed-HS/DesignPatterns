@@ -23,37 +23,47 @@ namespace DesignPatterns
         {
             string[] StatusValues = { "Unstarted", "In Progress", "Done" };
             for (int i = 0; i < StatusValues.Length; ++i) StatusCmbBox.Items.Add(StatusValues[i]);
-            table = Database.SelectQuery("select id, name from projects;");
-            if (table == null)
-                return;
-            for (int i = 0; i < table.Count; ++i) ProjectIDCmbBox.Items.Add(table[i]["ID"]);
+            table = Database.SelectQuery("select * from projects;");//select id,name from projects
+            if (table == null) return;
+            for (int i = 0; i < table.Count; ++i) ProjectIDCmbBox.Items.Add(table[i]["name"]);
         }
+
 
         private void AddTaskBtn_Click(object sender, EventArgs e)
         {
-            if (DescriptionTxtBox.Text == "" || ProjectIDCmbBox.SelectedItem.ToString() == "" || StatusCmbBox.SelectedItem.ToString() == "" || ToDatePicker.Value == null || FromDatePicker == null)
+            if (DescriptionTxtBox.Text == "" || ProjectIDCmbBox.SelectedItem == null || StatusCmbBox.SelectedItem == null)
             {
                 MessageBox.Show("Please Select/Input data into all fields");
                 return;
             }
+            if (DialogResult.Yes != MessageBox.Show($"Are you sure about the dates: '{FromDatePicker.Value}' --> '{ToDatePicker.Value}' ?", "Warning!", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                return;
+            }
             Task task = new Task();
             task.title = DescriptionTxtBox.Text;
-            task.fromDate = FromDatePicker.MinDate.ToString();
-            task.toDate = ToDatePicker.MinDate.ToString();
+            task.fromDate = FromDatePicker.Value.ToString();
+            task.toDate = ToDatePicker.Value.ToString();
+            MessageBox.Show(task.toDate + " " + task.fromDate);
             task.status = StatusCmbBox.SelectedItem.ToString();
-            task.ProjectID = FindProjectID(table, ProjectIDCmbBox.SelectedItem.ToString());
+            task.ProjectID = Convert.ToInt32(FindProjectID(table, ProjectIDCmbBox.SelectedItem.ToString()));
             if (Database.insertTask(task))
                 MessageBox.Show("Task added!", "Sucess!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("An Error Has Occured!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private int FindProjectID(List<Dictionary<string,string>> table, string projectName)
+        private string FindProjectID(List<Dictionary<string,string>> table, string projectName)
         {
             for (int i = 0; i < table.Count; ++i)
-                if (table[i]["ID"] == projectName)
-                    return i;
-            return -1;
+                if (table[i]["name"] == projectName)
+                    return table[i]["ID"];
+            return null;
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

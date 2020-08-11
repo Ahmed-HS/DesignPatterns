@@ -1,0 +1,51 @@
+INSERT INTO departments (`Name`) VALUES ("happy");
+INSERT INTO departments (`Name`) VALUES ("sad");
+INSERT INTO departments (`Name`) VALUES ("sport");
+INSERT INTO departments (`Name`) VALUES ("lol");
+INSERT INTO departments (`Name`) VALUES ("monkaS");
+
+
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("Mohamed","mou7a@mou7a.mou7a","7amada","456","shobra");
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("Hatem","hatem@hatem.hatem","hatoma","789","fi el 2alb");
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("ali","ali@ali.ali","alioka","101112","7elwan");
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("soli","soli@soli.soli","salamoza","131415","imby");
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("zula","zula@zula.zula","zular","161718","alex");
+INSERT INTO members (`name`, `email`,`password`,`phoneNumber`,`address`) VALUES ("Beshoy","beshoy@beshoy.beshoy","besho","192021","gamb hatem");
+
+
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("te7ina", 5, 1);
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("bala7", 7, 2);
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("te7ina", 3, 3);
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("te7ina", 4, 4);
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("te7ina", 8, 5);
+INSERT INTO projects (`name`, `departmentID`, `managerID`) VALUES ("te7ina", 8, 6);
+
+/*this may fail*/
+INSERT INTO resources (`name`, `taskID`) VALUES ("heqheq", 11);
+INSERT INTO resources (`name`, `taskID`) VALUES ("OS", 2);
+INSERT INTO resources (`name`, `taskID`) VALUES ("Graphics", null);
+INSERT INTO resources (`name`, `taskID`) VALUES ("Image Processing", 10);
+INSERT INTO resources (`name`, `taskID`) VALUES ("pls put me out of my misery", 7);
+
+
+INSERT INTO tasks (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ("geb 4 re8ifa", 10/11/2000, 19/10/2020, "unstarted", 5);
+INSERT INTO tasks (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ("lol", 2/2/1999, 12/12/1122, "unstarted", 4);
+INSERT INTO tasks (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ("gotem", '20-2-19', '1400-6-2', "Done", 6);
+INSERT INTO tasks (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ("sad react only", '1997-5-12', '2122-7-15', "Done", 2);
+INSERT INTO tasks (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ("1 like = 1 a7a", '1928-3-19', '2021-8-20', "In progress", 5);
+
+
+insert into departmentmember (`departmentID`, `memberID`) values("7","1");
+insert into departmentmember (`departmentID`, `memberID`) values("7","2");
+insert into departmentmember (`departmentID`, `memberID`) values("1","3");
+insert into departmentmember (`departmentID`, `memberID`) values("2","4");
+insert into departmentmember (`departmentID`, `memberID`) values("3","5");
+insert into departmentmember (`departmentID`, `memberID`) values("4","6");
+insert into departmentmember (`departmentID`, `memberID`) values("5","7");
+
+
+
+insert into membertasks (`memberID`, `taskID`) values(7,11);
+insert into membertasks (`memberID`, `taskID`) values(7,3);
+insert into membertasks (`memberID`, `taskID`) values(1,2);
+insert into membertasks (`memberID`, `taskID`) values(5, 7);
