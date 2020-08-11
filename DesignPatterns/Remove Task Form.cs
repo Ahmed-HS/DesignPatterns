@@ -22,6 +22,7 @@ namespace DesignPatterns
         {
             TaskIDCmbBox.Items.Clear();
             tasksTable = Database.SelectQuery("select ID, title from tasks;");
+            if (tasksTable == null) return;
             for (int i = 0; i < tasksTable.Count; ++i) TaskIDCmbBox.Items.Add(tasksTable[i]["title"]);
         }
         private string FindTaskID(List<Dictionary<string, string>> table, string taskName)
