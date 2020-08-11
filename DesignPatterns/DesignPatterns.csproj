@@ -158,6 +158,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Update Task Status.resx">
       <DependentUpon>Update Task Status.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="ViewTasksForm.resx">
       <DependentUpon>ViewTasksForm.cs</DependentUpon>
     </EmbeddedResource>
