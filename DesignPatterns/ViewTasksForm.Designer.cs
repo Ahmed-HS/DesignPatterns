@@ -35,7 +35,6 @@
             this.toDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +50,7 @@
             this.status});
             this.dataGridView1.Location = new System.Drawing.Point(24, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(754, 301);
+            this.dataGridView1.Size = new System.Drawing.Size(755, 313);
             this.dataGridView1.TabIndex = 0;
             // 
             // TaskID
@@ -84,22 +83,11 @@
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(693, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Add Task";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.addTask);
-            // 
             // ViewTasksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ViewTasksForm";
             this.Text = "ViewTasks";
@@ -117,6 +105,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn toDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.Button button1;
     }
 }

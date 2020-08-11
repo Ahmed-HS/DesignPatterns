@@ -63,12 +63,20 @@ namespace DesignPatterns
         public void logAllTasksStatus()
         {
             List<Task> allTasks = Database.getAllTasks();
+            if (allTasks == null)
+            {
+                return;
+            }
             logTasks(allTasks);
         }
 
         public void logProjectTaskStatus(int projectID)
         {
             List<Task> tasksToLog = Database.getProjectTaskByID(projectID);
+            if (tasksToLog == null)
+            {
+                return;
+            }
             logTasks(tasksToLog);
         }
 

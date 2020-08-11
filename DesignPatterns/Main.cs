@@ -56,8 +56,8 @@ namespace DesignPatterns
 
                 SessionInfo.get().member = loggedInMember;
 
-                ViewTasksForm tasks = new ViewTasksForm();
-                tasks.Show();
+                DashboardForm dash = new DashboardForm();
+                dash.Show();
             }
         }
 
