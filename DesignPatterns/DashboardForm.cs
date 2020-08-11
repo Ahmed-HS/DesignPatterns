@@ -70,5 +70,17 @@ namespace DesignPatterns
             AddTaskForm a = new AddTaskForm();
             a.Show();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Add_Project addProject = new Add_Project();
+            addProject.Show();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Add_Department addDepartment = new Add_Department();
+            addDepartment.Show();
+        }
     }
 }
