@@ -23,12 +23,12 @@ CREATE TABLE `designpatterns`.`projects` (
   `managerID` INT NOT NULL,
   PRIMARY KEY (`ID`),
   CONSTRAINT `departmentID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`departmentID`)
     REFERENCES `designpatterns`.`departments` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `managerID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`managerID`)
     REFERENCES `designpatterns`.`members` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -42,7 +42,7 @@ CREATE TABLE `designpatterns`.`tasks` (
   `projectID` INT NOT NULL,
   PRIMARY KEY (`ID`),
   CONSTRAINT `projectID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`projectID`)
     REFERENCES `designpatterns`.`projects` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -53,7 +53,7 @@ CREATE TABLE `designpatterns`.`resources` (
   `taskID` INT NOT NULL,
   PRIMARY KEY (`ID`),
   CONSTRAINT `taskID`
-    FOREIGN KEY (`ID`)
+    FOREIGN KEY (`taskID`)
     REFERENCES `designpatterns`.`tasks` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);

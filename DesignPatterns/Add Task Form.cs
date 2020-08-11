@@ -23,7 +23,7 @@ namespace DesignPatterns
         {
             string[] StatusValues = { "Unstarted", "In Progress", "Done" };
             for (int i = 0; i < StatusValues.Length; ++i) StatusCmbBox.Items.Add(StatusValues[i]);
-            table = Database.SelectQuery("select id, name from projects;");
+            table = Database.SelectQuery("select ID, name from projects;");
             if (table == null)
                 return;
             for (int i = 0; i < table.Count; ++i) ProjectIDCmbBox.Items.Add(table[i]["ID"]);
@@ -38,10 +38,10 @@ namespace DesignPatterns
             }
             Task task = new Task();
             task.title = DescriptionTxtBox.Text;
-            task.fromDate = FromDatePicker.MinDate.ToString();
-            task.toDate = ToDatePicker.MinDate.ToString();
+            task.fromDate = FromDatePicker.MinDate.ToString("yyyy-MM-dd HH:mm");
+            task.toDate = ToDatePicker.MinDate.ToString("yyyy-MM-dd HH:mm");
             task.status = StatusCmbBox.SelectedItem.ToString();
-            task.ProjectID = FindProjectID(table, ProjectIDCmbBox.SelectedItem.ToString());
+            task.ProjectID = int.Parse(ProjectIDCmbBox.SelectedItem.ToString());
             if (Database.insertTask(task))
                 MessageBox.Show("Task added!", "Sucess!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else

@@ -28,6 +28,13 @@ namespace DesignPatterns
                 $" VALUES ('{newMember.name}', '{newMember.email}', '{newMember.password}', '{newMember.phoneNumber}', '{newMember.addrees}');");
         }
 
+        public static bool insertTask(Task newTask)
+        {
+            return CRUDQuery($"INSERT INTO `tasks` (`title`, `fromDate`, `toDate`, `status`, `projectID`) VALUES ('{newTask.title}'," +
+                $" '{newTask.fromDate}', '{newTask.toDate}', '{newTask.status}', '{newTask.ProjectID}');");
+        }
+
+
         public static List<Task> getAllTasks()
         {
 
@@ -155,13 +162,6 @@ namespace DesignPatterns
 
             return project;
         }
-
-        public static bool insertTask(Task newTask)
-        {
-            return CRUDQuery($"INSERT INTO `projects` (`title`, `fromDate`, `toDate`, `status`, `projectID`)" +
-                $" VALUES ('{newTask.title}', '{newTask.fromDate}', '{newTask.toDate}', '{newTask.status}', '{newTask.ProjectID}')");
-        }
-
         // used for insert, update, delete
         public static bool CRUDQuery(string query)
         {

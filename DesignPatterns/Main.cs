@@ -55,7 +55,15 @@ namespace DesignPatterns
                     .build();
 
                 SessionInfo.get().member = loggedInMember;
+
+                ViewTasksForm tasks = new ViewTasksForm();
+                tasks.Show();
             }
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -133,7 +133,7 @@ namespace DesignPatterns
         public String toDate { get; set; }
         public String status { get; set; }
 
-        private Task()
+        public Task()
         { 
         }
 
