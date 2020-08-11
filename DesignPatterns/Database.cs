@@ -71,6 +71,134 @@ namespace DesignPatterns
                 CRUDQuery($"DELETE FROM `tasks` WHERE ID = '{taskID}'");
         }
 
+
+        public static List<Task> getAllTasks()
+        {
+
+            List<Dictionary<string, string>> tasks = SelectQuery("SELECT * FROM tasks");
+
+            if (tasks == null)
+            {
+                return null;
+            }
+
+            List<Task> tasksList = new List<Task>();
+
+
+            foreach (Dictionary<string, string> row in tasks)
+            {
+                Task currentTask = new Task.Builder()
+                    .setID(int.Parse(row["ID"]))
+                    .setTitle(row["title"])
+                    .setProjectID(int.Parse(row["projectID"]))
+                    .setFromDate(row["fromDate"])
+                    .setToDate(row["toDate"])
+                    .setStatus(row["status"])
+                    .build();
+
+                tasksList.Add(currentTask);
+            }
+
+            return tasksList;
+        }
+
+        public static List<Task> getProjectTaskByID(int projectID)
+        {
+            List<Dictionary<string, string>> tasks = SelectQuery($"SELECT * FROM tasks where projectID = {projectID}");
+
+            if (tasks == null)
+            {
+                return null;
+            }
+
+
+            List<Task> tasksList = new List<Task>();
+
+
+            foreach (Dictionary<string, string> row in tasks)
+            {
+                Task currentTask = new Task.Builder()
+                    .setID(int.Parse(row["ID"]))
+                    .setTitle(row["title"])
+                    .setProjectID(int.Parse(row["projectID"]))
+                    .setFromDate(row["fromDate"])
+                    .setToDate(row["toDate"])
+                    .setStatus(row["status"])
+                    .build();
+
+                tasksList.Add(currentTask);
+            }
+
+            return tasksList;
+        }
+
+        public static List<Member> getTaskMembersByID(int taskID)
+        {
+            List<Dictionary<string, string>> memberIDs = Database.SelectQuery($"SELECT memberID FROM membertasks where taskID = {taskID};");
+            string memberSelect = "SELECT * FROM members where ";
+
+            if (memberIDs == null)
+            {
+                return null;
+            }
+
+            foreach (Dictionary<string, string> row in memberIDs)
+            {
+                memberSelect += $"ID = {row["memberID"]} or ";
+            }
+
+            memberSelect = memberSelect.Remove(memberSelect.Length - 3);
+            memberSelect += ";";
+
+            List<Dictionary<string, string>> membersResult = Database.SelectQuery(memberSelect);
+
+            List<Member> membersList = new List<Member>();
+
+
+            foreach (Dictionary<string, string> row in membersResult)
+            {
+                Member currentMember = new Member.Builder()
+                    .setID(int.Parse(row["ID"]))
+                    .setEmail(row["email"])
+                    .setName(row["name"])
+                    .setphone(row["phoneNumber"])
+                    .setAddress(row["address"])
+                    .build();
+
+                membersList.Add(currentMember);
+            }
+
+            return membersList;
+        }
+
+        public static Department getDepartmentByID(int departmentID)
+        {
+            List<Dictionary<string, string>> result = SelectQuery($"SELECT * FROM departments where ID = {departmentID}");
+            if (result == null)
+            {
+                return null;
+            }
+            Department department = new Department();
+            department.ID = int.Parse(result[0]["ID"]);
+            department.name = result[0]["Name"];
+            return department;
+        }
+
+        public static Project getProjectByID(int projectID)
+        {
+            List<Dictionary<string, string>> result = SelectQuery($"SELECT * FROM projects where ID = {projectID}");
+            if (result == null)
+            {
+                return null;
+            }
+            Project project = new Project();
+            project.ID = int.Parse(result[0]["ID"]);
+            project.departmentID = int.Parse(result[0]["departmentID"]);
+            project.managerID = int.Parse(result[0]["managerID"]);
+            project.name = result[0]["name"];
+
+            return project;
+        }
         // used for insert, update, delete
         public static bool CRUDQuery(string query)
         {

@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders.cs" />
+    <Compile Include="DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Entities.cs" />
     <Compile Include="Add Task Form.cs">
@@ -91,6 +98,13 @@
     <Compile Include="Remove Task Member.Designer.cs">
       <DependentUpon>Remove Task Member.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +119,21 @@
     <EmbeddedResource Include="Add Task Members.resx">
       <DependentUpon>Add Task Members.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="SessionInfo.cs" />
+    <Compile Include="ViewTasksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTasksForm.Designer.cs">
+      <DependentUpon>ViewTasksForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add Task Form.resx">
       <DependentUpon>Add Task Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -131,6 +158,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Update Task Status.resx">
       <DependentUpon>Update Task Status.cs</DependentUpon>
+    <EmbeddedResource Include="ViewTasksForm.resx">
+      <DependentUpon>ViewTasksForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
