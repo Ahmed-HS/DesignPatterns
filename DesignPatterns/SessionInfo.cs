@@ -60,7 +60,7 @@ namespace DesignPatterns
             taskSelect = taskSelect.Remove(taskSelect.Length - 3);
             taskSelect += ";";
 
-            List<Dictionary<string, string>> tasksResult = Database.SelectQuery(taskSelect);
+            List<Dictionary<string, string>> tasksResult = Database.SelectQuery(taskSelect);//?
 
             List<Task> tasksList = new List<Task>();
 

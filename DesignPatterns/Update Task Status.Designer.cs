@@ -40,7 +40,7 @@
             // TaskStatusLbl
             // 
             this.TaskStatusLbl.AutoSize = true;
-            this.TaskStatusLbl.Location = new System.Drawing.Point(433, 84);
+            this.TaskStatusLbl.Location = new System.Drawing.Point(323, 62);
             this.TaskStatusLbl.Name = "TaskStatusLbl";
             this.TaskStatusLbl.Size = new System.Drawing.Size(119, 17);
             this.TaskStatusLbl.TabIndex = 0;
@@ -49,7 +49,7 @@
             // TaskIDLbl
             // 
             this.TaskIDLbl.AutoSize = true;
-            this.TaskIDLbl.Location = new System.Drawing.Point(145, 84);
+            this.TaskIDLbl.Location = new System.Drawing.Point(35, 62);
             this.TaskIDLbl.Name = "TaskIDLbl";
             this.TaskIDLbl.Size = new System.Drawing.Size(56, 17);
             this.TaskIDLbl.TabIndex = 1;
@@ -58,7 +58,7 @@
             // StatusCmbBox
             // 
             this.StatusCmbBox.FormattingEnabled = true;
-            this.StatusCmbBox.Location = new System.Drawing.Point(436, 147);
+            this.StatusCmbBox.Location = new System.Drawing.Point(326, 125);
             this.StatusCmbBox.Name = "StatusCmbBox";
             this.StatusCmbBox.Size = new System.Drawing.Size(199, 24);
             this.StatusCmbBox.TabIndex = 2;
@@ -66,7 +66,7 @@
             // TaskIDCmbBox
             // 
             this.TaskIDCmbBox.FormattingEnabled = true;
-            this.TaskIDCmbBox.Location = new System.Drawing.Point(148, 147);
+            this.TaskIDCmbBox.Location = new System.Drawing.Point(38, 125);
             this.TaskIDCmbBox.Name = "TaskIDCmbBox";
             this.TaskIDCmbBox.Size = new System.Drawing.Size(199, 24);
             this.TaskIDCmbBox.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // UpdateStatusBtn
             // 
-            this.UpdateStatusBtn.Location = new System.Drawing.Point(614, 371);
+            this.UpdateStatusBtn.Location = new System.Drawing.Point(405, 294);
             this.UpdateStatusBtn.Name = "UpdateStatusBtn";
             this.UpdateStatusBtn.Size = new System.Drawing.Size(144, 43);
             this.UpdateStatusBtn.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(436, 371);
+            this.CancelBtn.Location = new System.Drawing.Point(255, 294);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(144, 43);
             this.CancelBtn.TabIndex = 5;
@@ -95,7 +95,7 @@
             // CurrentStatusLbl
             // 
             this.CurrentStatusLbl.AutoSize = true;
-            this.CurrentStatusLbl.Location = new System.Drawing.Point(148, 234);
+            this.CurrentStatusLbl.Location = new System.Drawing.Point(38, 212);
             this.CurrentStatusLbl.Name = "CurrentStatusLbl";
             this.CurrentStatusLbl.Size = new System.Drawing.Size(103, 17);
             this.CurrentStatusLbl.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(561, 349);
             this.Controls.Add(this.CurrentStatusLbl);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.UpdateStatusBtn);

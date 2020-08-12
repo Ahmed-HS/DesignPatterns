@@ -37,7 +37,7 @@
             // ResourceIDLbl
             // 
             this.ResourceIDLbl.AutoSize = true;
-            this.ResourceIDLbl.Location = new System.Drawing.Point(291, 115);
+            this.ResourceIDLbl.Location = new System.Drawing.Point(32, 53);
             this.ResourceIDLbl.Name = "ResourceIDLbl";
             this.ResourceIDLbl.Size = new System.Drawing.Size(86, 17);
             this.ResourceIDLbl.TabIndex = 0;
@@ -46,14 +46,14 @@
             // ResourceCmbBox
             // 
             this.ResourceCmbBox.FormattingEnabled = true;
-            this.ResourceCmbBox.Location = new System.Drawing.Point(294, 170);
+            this.ResourceCmbBox.Location = new System.Drawing.Point(35, 108);
             this.ResourceCmbBox.Name = "ResourceCmbBox";
             this.ResourceCmbBox.Size = new System.Drawing.Size(207, 24);
             this.ResourceCmbBox.TabIndex = 1;
             // 
             // RemoveResourceBtn
             // 
-            this.RemoveResourceBtn.Location = new System.Drawing.Point(655, 407);
+            this.RemoveResourceBtn.Location = new System.Drawing.Point(66, 272);
             this.RemoveResourceBtn.Name = "RemoveResourceBtn";
             this.RemoveResourceBtn.Size = new System.Drawing.Size(133, 31);
             this.RemoveResourceBtn.TabIndex = 4;
@@ -63,7 +63,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(517, 407);
+            this.CancelBtn.Location = new System.Drawing.Point(67, 235);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(132, 31);
             this.CancelBtn.TabIndex = 5;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(281, 315);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.RemoveResourceBtn);
             this.Controls.Add(this.ResourceCmbBox);

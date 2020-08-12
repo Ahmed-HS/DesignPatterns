@@ -37,7 +37,7 @@
             // TaskIDLbl
             // 
             this.TaskIDLbl.AutoSize = true;
-            this.TaskIDLbl.Location = new System.Drawing.Point(277, 132);
+            this.TaskIDLbl.Location = new System.Drawing.Point(49, 68);
             this.TaskIDLbl.Name = "TaskIDLbl";
             this.TaskIDLbl.Size = new System.Drawing.Size(56, 17);
             this.TaskIDLbl.TabIndex = 0;
@@ -46,14 +46,14 @@
             // TaskIDCmbBox
             // 
             this.TaskIDCmbBox.FormattingEnabled = true;
-            this.TaskIDCmbBox.Location = new System.Drawing.Point(280, 181);
+            this.TaskIDCmbBox.Location = new System.Drawing.Point(52, 117);
             this.TaskIDCmbBox.Name = "TaskIDCmbBox";
             this.TaskIDCmbBox.Size = new System.Drawing.Size(223, 24);
             this.TaskIDCmbBox.TabIndex = 1;
             // 
             // RemoveTaskBtn
             // 
-            this.RemoveTaskBtn.Location = new System.Drawing.Point(675, 409);
+            this.RemoveTaskBtn.Location = new System.Drawing.Point(107, 262);
             this.RemoveTaskBtn.Name = "RemoveTaskBtn";
             this.RemoveTaskBtn.Size = new System.Drawing.Size(113, 29);
             this.RemoveTaskBtn.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(556, 409);
+            this.CancelBtn.Location = new System.Drawing.Point(107, 227);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(113, 29);
             this.CancelBtn.TabIndex = 3;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(325, 303);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.RemoveTaskBtn);
             this.Controls.Add(this.TaskIDCmbBox);

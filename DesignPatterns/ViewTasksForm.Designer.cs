@@ -48,47 +48,62 @@
             this.toDate,
             this.projectName,
             this.status});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 15);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(755, 313);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1007, 385);
             this.dataGridView1.TabIndex = 0;
             // 
             // TaskID
             // 
             this.TaskID.HeaderText = "TaskID";
+            this.TaskID.MinimumWidth = 6;
             this.TaskID.Name = "TaskID";
+            this.TaskID.Width = 125;
             // 
             // taskTitle
             // 
             this.taskTitle.HeaderText = "taskTitle";
+            this.taskTitle.MinimumWidth = 6;
             this.taskTitle.Name = "taskTitle";
+            this.taskTitle.Width = 125;
             // 
             // fromDate
             // 
             this.fromDate.HeaderText = "From date";
+            this.fromDate.MinimumWidth = 6;
             this.fromDate.Name = "fromDate";
+            this.fromDate.Width = 125;
             // 
             // toDate
             // 
             this.toDate.HeaderText = "To Date";
+            this.toDate.MinimumWidth = 6;
             this.toDate.Name = "toDate";
+            this.toDate.Width = 125;
             // 
             // projectName
             // 
             this.projectName.HeaderText = "Project name";
+            this.projectName.MinimumWidth = 6;
             this.projectName.Name = "projectName";
+            this.projectName.Width = 125;
             // 
             // status
             // 
             this.status.HeaderText = "Status";
+            this.status.MinimumWidth = 6;
             this.status.Name = "status";
+            this.status.Width = 125;
             // 
             // ViewTasksForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 425);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewTasksForm";
             this.Text = "ViewTasks";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

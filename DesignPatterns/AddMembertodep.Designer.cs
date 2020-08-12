@@ -37,23 +37,26 @@
             // 
             // memberid
             // 
-            this.memberid.Location = new System.Drawing.Point(70, 67);
+            this.memberid.Location = new System.Drawing.Point(93, 82);
+            this.memberid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.memberid.Name = "memberid";
-            this.memberid.Size = new System.Drawing.Size(100, 20);
+            this.memberid.Size = new System.Drawing.Size(132, 22);
             this.memberid.TabIndex = 0;
             // 
             // depid
             // 
-            this.depid.Location = new System.Drawing.Point(70, 128);
+            this.depid.Location = new System.Drawing.Point(93, 158);
+            this.depid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.depid.Name = "depid";
-            this.depid.Size = new System.Drawing.Size(100, 20);
+            this.depid.Size = new System.Drawing.Size(132, 22);
             this.depid.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(103, 197);
+            this.button1.Location = new System.Drawing.Point(111, 269);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 2;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,31 +65,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 36);
+            this.label1.Location = new System.Drawing.Point(93, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "MemberId";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 102);
+            this.label2.Location = new System.Drawing.Point(93, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(47, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "dep id";
             // 
             // AddMembertodep
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 272);
+            this.ClientSize = new System.Drawing.Size(314, 310);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.depid);
             this.Controls.Add(this.memberid);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddMembertodep";
             this.Text = "AddMembertodep";
             this.ResumeLayout(false);

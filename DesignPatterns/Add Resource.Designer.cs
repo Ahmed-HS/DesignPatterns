@@ -41,7 +41,7 @@
             // ResourceNameLbl
             // 
             this.ResourceNameLbl.AutoSize = true;
-            this.ResourceNameLbl.Location = new System.Drawing.Point(320, 72);
+            this.ResourceNameLbl.Location = new System.Drawing.Point(139, 35);
             this.ResourceNameLbl.Name = "ResourceNameLbl";
             this.ResourceNameLbl.Size = new System.Drawing.Size(110, 17);
             this.ResourceNameLbl.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // ResourceNameTxtBox
             // 
-            this.ResourceNameTxtBox.Location = new System.Drawing.Point(279, 115);
+            this.ResourceNameTxtBox.Location = new System.Drawing.Point(98, 78);
             this.ResourceNameTxtBox.Name = "ResourceNameTxtBox";
             this.ResourceNameTxtBox.Size = new System.Drawing.Size(192, 22);
             this.ResourceNameTxtBox.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.OptionalGroupBox.Controls.Add(this.TaskIDCmbBox);
             this.OptionalGroupBox.Controls.Add(this.TaskIDLbl);
-            this.OptionalGroupBox.Location = new System.Drawing.Point(213, 176);
+            this.OptionalGroupBox.Location = new System.Drawing.Point(32, 139);
             this.OptionalGroupBox.Name = "OptionalGroupBox";
             this.OptionalGroupBox.Size = new System.Drawing.Size(322, 165);
             this.OptionalGroupBox.TabIndex = 2;
@@ -84,7 +84,7 @@
             // 
             // AddResourceBtn
             // 
-            this.AddResourceBtn.Location = new System.Drawing.Point(656, 407);
+            this.AddResourceBtn.Location = new System.Drawing.Point(128, 407);
             this.AddResourceBtn.Name = "AddResourceBtn";
             this.AddResourceBtn.Size = new System.Drawing.Size(132, 31);
             this.AddResourceBtn.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(518, 407);
+            this.CancelBtn.Location = new System.Drawing.Point(128, 370);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(132, 31);
             this.CancelBtn.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(387, 450);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.AddResourceBtn);
             this.Controls.Add(this.OptionalGroupBox);

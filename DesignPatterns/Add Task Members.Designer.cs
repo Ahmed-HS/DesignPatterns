@@ -87,7 +87,7 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(614, 374);
+            this.AddBtn.Location = new System.Drawing.Point(469, 315);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(158, 47);
             this.AddBtn.TabIndex = 5;
@@ -115,7 +115,7 @@
             // 
             // CancelBtn
             // 
-            this.CancelBtn.Location = new System.Drawing.Point(431, 374);
+            this.CancelBtn.Location = new System.Drawing.Point(305, 315);
             this.CancelBtn.Name = "CancelBtn";
             this.CancelBtn.Size = new System.Drawing.Size(158, 47);
             this.CancelBtn.TabIndex = 9;
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(639, 374);
             this.Controls.Add(this.AddMembersTxtBox);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.RemoveMemberCmbBox);
