@@ -44,7 +44,6 @@ namespace DesignPatterns
             task.title = DescriptionTxtBox.Text;
             task.fromDate = FromDatePicker.Value.ToString();
             task.toDate = ToDatePicker.Value.ToString();
-            MessageBox.Show(task.toDate + " " + task.fromDate);
             task.status = StatusCmbBox.SelectedItem.ToString();
             task.ProjectID = Convert.ToInt32(FindProjectID(table, ProjectIDCmbBox.SelectedItem.ToString()));
             if (Database.insertTask(task))
