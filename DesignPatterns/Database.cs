@@ -14,7 +14,7 @@ namespace DesignPatterns
         static string connectionString;
         static Database()
         {
-            connectionString = "datasource=127.0.0.1;port=3307;username=root;password=1234;database=designpatterns;"; //change username and password for your database
+            connectionString = "datasource=127.0.0.1;port=3306;username=Ahmed;password=1234;database=designpatterns;"; //change username and password for your database
         }
 
         public static bool insertdepartment(Department newDepartment)

@@ -82,5 +82,10 @@ namespace DesignPatterns
             Add_Department addDepartment = new Add_Department();
             addDepartment.Show();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            new AddMembertodep().Show();
+        }
     }
 }
