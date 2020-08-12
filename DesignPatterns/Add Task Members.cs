@@ -96,6 +96,7 @@ namespace DesignPatterns
         private void AddBtn_Click(object sender, EventArgs e)
         {
             if (taskIDSending == null) return;
+            if (AddMembersCmbBox.Items.Count == 0) return;
             List<bool> sending = new List<bool>();
             foreach(object member in AddMembersCmbBox.Items)
                 sending.Add(Database.insertTaskMember(taskIDSending, member.ToString()));
