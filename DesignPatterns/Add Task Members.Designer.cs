@@ -36,8 +36,8 @@
             this.AddBtn = new System.Windows.Forms.Button();
             this.RemoveMemberLbl = new System.Windows.Forms.Label();
             this.RemoveMemberCmbBox = new System.Windows.Forms.ComboBox();
-            this.AddMembersCmbBox = new System.Windows.Forms.ComboBox();
             this.CancelBtn = new System.Windows.Forms.Button();
+            this.AddMembersTxtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TaskIDLbl
@@ -113,14 +113,6 @@
             this.RemoveMemberCmbBox.TabIndex = 7;
             this.RemoveMemberCmbBox.SelectedIndexChanged += new System.EventHandler(this.RemoveMemberCmbBox_SelectedIndexChanged);
             // 
-            // AddMembersCmbBox
-            // 
-            this.AddMembersCmbBox.FormattingEnabled = true;
-            this.AddMembersCmbBox.Location = new System.Drawing.Point(61, 240);
-            this.AddMembersCmbBox.Name = "AddMembersCmbBox";
-            this.AddMembersCmbBox.Size = new System.Drawing.Size(194, 24);
-            this.AddMembersCmbBox.TabIndex = 8;
-            // 
             // CancelBtn
             // 
             this.CancelBtn.Location = new System.Drawing.Point(431, 374);
@@ -131,13 +123,20 @@
             this.CancelBtn.UseVisualStyleBackColor = true;
             this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
+            // AddMembersTxtBox
+            // 
+            this.AddMembersTxtBox.Location = new System.Drawing.Point(61, 241);
+            this.AddMembersTxtBox.Name = "AddMembersTxtBox";
+            this.AddMembersTxtBox.Size = new System.Drawing.Size(194, 22);
+            this.AddMembersTxtBox.TabIndex = 10;
+            // 
             // AddTaskMembersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.AddMembersTxtBox);
             this.Controls.Add(this.CancelBtn);
-            this.Controls.Add(this.AddMembersCmbBox);
             this.Controls.Add(this.RemoveMemberCmbBox);
             this.Controls.Add(this.RemoveMemberLbl);
             this.Controls.Add(this.AddBtn);
@@ -164,7 +163,7 @@
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.Label RemoveMemberLbl;
         private System.Windows.Forms.ComboBox RemoveMemberCmbBox;
-        private System.Windows.Forms.ComboBox AddMembersCmbBox;
         private System.Windows.Forms.Button CancelBtn;
+        private System.Windows.Forms.TextBox AddMembersTxtBox;
     }
 }

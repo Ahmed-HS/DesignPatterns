@@ -30,6 +30,8 @@ namespace DesignPatterns
             tasksTable = Database.SelectQuery("select ID, title, projectID from tasks;");
             if (tasksTable == null) return;
             for (int i = 0; i < tasksTable.Count; ++i) TaskIDCmbBox.Items.Add(tasksTable[i]["title"]);
+            AddMembersTxtBox.Text = "";
+            AddMembersTxtBox.ReadOnly = true;
         }
 
         private string FindTaskID(List<Dictionary<string, string>> table, string taskName)
@@ -56,7 +58,8 @@ namespace DesignPatterns
         private void TaskIDCmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MemberIDCmbBox.Items.Clear();
-            AddMembersCmbBox.Items.Clear();
+            AddMembersTxtBox.Text = "";
+            AddMembersTxtBox.ReadOnly = true;
             RemoveMemberCmbBox.Items.Clear();
             string taskID = FindTaskID(tasksTable, TaskIDCmbBox.Text);
             if (taskID == null) return;
@@ -81,7 +84,7 @@ namespace DesignPatterns
 
         private void MemberIDCmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddMembersCmbBox.Items.Add(MemberIDCmbBox.SelectedItem);
+            AddMembersTxtBox.Text += " " + MemberIDCmbBox.SelectedItem + " ";
             RemoveMemberCmbBox.Items.Add(MemberIDCmbBox.SelectedItem);
             MemberIDCmbBox.Items.Remove(MemberIDCmbBox.SelectedItem);
         }
@@ -89,17 +92,22 @@ namespace DesignPatterns
         private void RemoveMemberCmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             MemberIDCmbBox.Items.Add(RemoveMemberCmbBox.SelectedItem);
-            AddMembersCmbBox.Items.Remove(RemoveMemberCmbBox.SelectedItem);
+            char[] delimiter = { ' ' };
+            string[] str = AddMembersTxtBox.Text.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
+            List<string> strList = new List<string>(str);
+            strList.Remove(RemoveMemberCmbBox.SelectedItem.ToString());
+            AddMembersTxtBox.Text = String.Join(" ", strList.ToArray());
             RemoveMemberCmbBox.Items.Remove(RemoveMemberCmbBox.SelectedItem);
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
             if (taskIDSending == null) return;
-            if (AddMembersCmbBox.Items.Count == 0) return;
+            if (AddMembersTxtBox.Text.Trim() == "") return;
             List<bool> sending = new List<bool>();
-            foreach(object member in AddMembersCmbBox.Items)
-                sending.Add(Database.insertTaskMember(taskIDSending, member.ToString()));
+            char[] delimiter = { ' ' };
+            foreach(string member in AddMembersTxtBox.Text.Split(delimiter, StringSplitOptions.RemoveEmptyEntries))
+                sending.Add(Database.insertTaskMember(taskIDSending, member));
             if (sending.Contains(false))
                 MessageBox.Show("An Error Has Occured!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
