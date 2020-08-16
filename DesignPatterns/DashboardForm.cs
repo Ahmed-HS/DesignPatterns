@@ -87,5 +87,10 @@ namespace DesignPatterns
         {
             new AddMembertodep().Show();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            new AddMemberToProject().Show();
+        }
     }
 }
